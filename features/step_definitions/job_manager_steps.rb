@@ -1,11 +1,12 @@
 Given(/^an empty string input$/) do
-  pending # express the regexp above with the code you wish you had
+ @input = ""
 end
 
 When(/^the job manager is run$/) do
-  pending # express the regexp above with the code you wish you had
+  @output = `ruby job_manager.rb #{@input}`
+  raise('Command failed!') unless $?.success?
 end
 
 Then(/^the output should be an empty sequence$/) do
-  pending # express the regexp above with the code you wish you had
+ expect(@output).to eq("")
 end
