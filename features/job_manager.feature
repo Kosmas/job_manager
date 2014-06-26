@@ -3,6 +3,11 @@ Feature: Job manager
   I want to be able to have a job list that all dependencies are satisfied
 
   Scenario: Empty string input
-    Given an empty string input
+    Given an input ""
     When the job manager is run
-    Then the output should be an empty sequence 
+    Then the output should be ""
+
+  Scenario: Single job input
+    Given an input 'a =>'
+    When the job manager is run
+    Then the output should be "a"
